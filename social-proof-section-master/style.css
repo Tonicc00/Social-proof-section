@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&display=swap");
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root{
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    --drak-grayish-magenta: hsl(303, 10%, 53%);
+	--light-grayish-magenta: hsl(300, 24%, 96%);
+	--white: hsl(0, 0%, 100%);
+
+}
+
+body{
+    font-family: "Spartan", sans-serif;
+    font-size: 15px;
+    width: 100vw;
+    min-height: 100vw;
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    background-size: 100%;
+}
+
+.main{
+    width: 80%;
+    max-width: 1090px;
+    margin: 3em auto;
+}
+
+.header{
+    text-align: center;
+}
+
+.title{
+    font-size: 2rem;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+.subTitle{
+    color: var(--drak-grayish-magenta);
+    margin: 2em 0;
+    line-height: 2;
+}
+
+.rating{
+    margin: 3em 0;
+}
+
+.ratings{
+    background-color: var(--light-grayish-magenta);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.star{
+    margin-bottom: 0.5em;
+}
+
+.voting{
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+.reviews{
+    background-color: var(--very-dark-magenta);
+    color: whitesmoke;
+    padding: 2em;
+    margin: 1em 0;
+    border-radius: 10px;
+}
+
+.users{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.users p{
+    font-weight: 400;
+}
+
+.users img{
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+span{
+    color: hsl(333, 80%, 67%);
+    font-weight: 350;
+}
+
+.tekst{
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    body{
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: top left, bottom, right;
+        background-size: 50% 75%;
+    }
+
+    .main{
+        width: 80%;
+        margin: 3em auto;
+        display: grid;
+        grid-template-areas: "header rating", "review review";
+    }
+
+    .header{
+        grid-area: header;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .rating{
+        grid-area: rating;
+    }
+
+    .ratings{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding: 1em;
+    }
+
+    .star{
+        margin-right: 20px;
+    }
+
+    .review{
+        grid-area: review;
+        display: grid;
+        grid-template-areas: 
+        "colton irene"
+        "anne anne";
+        margin-top: 60px;
+        gap: 20px;
+        margin: 0;
+    }
+
+    #colton{
+        grid-area: colton;
+        margin: 0;
+    }
+
+    #irene{
+        grid-area: irene;
+        margin: 0;
+    }
+
+    #anne{
+        grid-area: anne;
+        margin: 0;
+    }
+
+    .users img{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body{
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: top left, bottom right;
+        background-size: 50% 75%;
+    }
+    .main{
+        width: 90%;
+        margin: 3em auto;
+        display: grid;
+        grid-template-areas: 
+        "header rating"
+        "review review";
+    }
+
+    .header{
+        grid-area: header;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 520px;
+    }
+
+    .title{
+        font-size: 3rem;
+    }
+
+    .ratings{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 450px;
+        padding: 1.5em 0;
+    }
+
+    .star{
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+    
+    #rateTwo{
+        margin-left: 40px;
+    }
+
+    #rateThree{
+        margin-left: 80px;
+    }
+
+    .review{
+        grid-area: review;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    .reviews{
+        width: 350px;
+        height: 250px;
+    }
+
+    #irene{
+        margin-top: 35px;
+    }
+
+    #anne{
+        margin-top: 60px;
+    }
+}
